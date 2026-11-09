@@ -1,0 +1,39 @@
+{
+  "repository": "https://github.com/anomalyco/opencode",
+  "version": "2.0.32",
+  "ref": "dev",
+  "commit": "60a5a6ca7ce176b04cd2321ffd1819b1ea8e6006",
+  "license": "MIT",
+  "apkLicenseNotice": "app/src/main/assets/licenses/OPENCODE-LICENSE",
+  "checkout": "upstream/opencode",
+  "androidCore": {
+    "version": "2.0.32",
+    "condition": "android",
+    "sdkEntry": "upstream/opencode/packages/sdk/src/android-host.ts",
+    "bundledAsset": "app/src/main/assets/opencode-host.js",
+    "features": [
+      "local Core startup",
+      "session creation and prompt",
+      "message history",
+      "OpenCode Zen model catalog"
+    ],
+    "omitted": [
+      "terminal",
+      "PTY",
+      "Git"
+    ]
+  },
+  "openCodeZen": {
+    "modelsEndpoint": "https://opencode.ai/zen/v1/models",
+    "inferenceBaseUrl": "https://opencode.ai/zen/v1",
+    "apiKeyPreference": "encrypted with Android Keystore"
+  },
+  "androidRuntime": {
+    "name": "Bun",
+    "version": "1.4.2",
+    "asset": "bun-linux-aarch64-android.zip",
+    "binary": "app/src/main/jniLibs/arm64-v8a/libopencode-bun.so",
+    "binarySha256": "F2970336BFCCF36E4E8A408B25C627122F210E941672F184198C31F4DBD377A0",
+    "license": "app/src/main/assets/licenses/BUN-LICENSE.md"
+  }
+}
